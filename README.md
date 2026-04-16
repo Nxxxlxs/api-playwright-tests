@@ -16,24 +16,25 @@ Repositório de automação de testes de API utilizando Python, pytest, Playwrig
 
 ## 📁 Estrutura do projeto
 
+```
  | src/
- |	└──api/
- |		└── clients/
- |		 |	└── base_client.py |
- |		 |	└── users_client.py
- |		└── utils/
- |			└── allure_helpers.py
+ |	└── api/
+ |		 └── clients/
+ |		 |	   └── base_client.py 
+ |		 |	   └── users_client.py
+ |		 └── utils/
+ |			     └── allure_helpers.py
  | tests/
  |	└── api/
  |	 |	└──test_users.py
  |	 |
  |	 |
  |	 |── config.py
- | 	└── conftest.py
+ | 	      └── conftest.py
  | pyproject.toml
  | uv.lock
  | .python-version
-
+```
 ---
 
 ## ⚙️ Pré-requisitos
@@ -44,44 +45,63 @@ Repositório de automação de testes de API utilizando Python, pytest, Playwrig
 Instalar uv:
 
 Linux/macOS:
+```
 curl -Ls https://astral.sh/uv/install.sh | sh
+```
 
 Windows (PowerShell):
+```
 powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+``` 
 
 ---
 
 ## 📦 Instalação
 
+```
 git clone `<url-do-repo>`
+```
+```
 cd api-playwright-tests
-
+```
+```
 uv sync
+```
 
 ---
 
 ## 🌐 Instalar Playwright
 
+```
 uv run playwright install
+```
 
 ---
 
 ## ▶️ Executar testes
 
+```
 uv run pytest
+```
 
 Modo verboso:
+```
 uv run pytest -v
+```
 
 ---
 
 ## 📊 Allure Reports
 
 Gerar dados:
+```
 uv run pytest
+```
 
 Abrir relatório:
-allure serve allure-results
+```
+allure serve
+```
 
 ---
 
@@ -98,9 +118,12 @@ Ignorados pelo git:
 
 ## 🧪 Exemplo de teste
 
+```
 def test_list_users(users):
     response = users.list_users()
     assert response.ok
+
+```
 
 ---
 
@@ -115,10 +138,12 @@ utils → helpers (Allure, logs)
 
 ## ⚙️ Config pytest (pyproject.toml)
 
+```
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--alluredir=allure-results --clean-alluredir"
 python_files = "test_*.py"
+```
 
 ---
 
@@ -131,10 +156,18 @@ requires-python = "3.14"
 
 ## 🚀 Comandos principais
 
+```
 uv add `<pacote>`
+```
+```
 uv sync
+```
+```
 uv run pytest
+```
+```
 uv run playwright install
+```
 
 ---
 
